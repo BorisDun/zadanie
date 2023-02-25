@@ -1,0 +1,29 @@
+from tkinter import *
+from random import *
+root = Tk()
+root.title("1111")
+root.geometry("700x700")
+canvas = Canvas(bg="white", width=500, height=500)
+canvas.pack(anchor=CENTER, expand=1)
+def rectengle():
+    canvas.delete('all')
+    canvas.create_rectangle(50,250,300,500)
+def tri():
+    canvas.delete('all')
+    canvas.create_polygon(randint(10,400), randint(10,400), randint(10,400), randint(10,400), randint(10,400), randint(10,400))
+def circle():
+    canvas.delete('all')
+    canvas.create_oval(50, 250, 300, 500)
+def fig():
+  s = randint(1,3)
+  if s == 1:
+    rectengle();
+    
+  elif s == 2:
+    tri();
+  else:
+    circle();
+
+Button=Button(root, text='CLICK', width=10, height=2, bg = 'gray',fg = "white", command=fig)
+Button.pack()
+root.mainloop()
